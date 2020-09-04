@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-time fd '' s{6,7} -d 1 -x make -C {} \; -j 8
+time fd '' s{1,2} -d 1 -x make -C {} \; -j 8
