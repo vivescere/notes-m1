@@ -1,123 +1,80 @@
-# Premier cours (7 septembre)
+# Premier cours
+
+7 Septembre 2020 (10h)
 
 ## Informations utiles
 
-Prof: M. Hamri
-amine.hamri@univ-amu.fr
+### Professeurs
 
-Autre prof: Jean Luc Massat
-+ un autre
+- HAMRI Maamar El Amine, [amine.hamri@univ-amu.fr](mailto:amine.hamri@univ-amu.fr)
+- MASSAT Jean luc, [jean-luc.massat@univ-amu.fr](mailto:jean-luc.massat@univ-amu.fr)
+- YACOUB Aznam, pas de mail donné 
 
-9cours, 9td, 9tp tous de 2h
+### Volume horaire
 
-### Evaluations
+- 9 cours de 2h
+- 9 TD de 2h
+- 9 TP de 2h
 
-Examen temrinal de 3H en décembre + 2 projets en équipe
+### Modalités de contrôle des connaissances
 
-Première session: NF = 0.6*Examen terminal + 0.4 * projet
-avec projet = max(0.3 * projet1 + 0.7 projet2, projet2)
-projet1 : a priori 3 semaines
-projet2 : a priori 7 semaines
+Première session:
+$NoteFinale = 0.6 * ExamenTerminal + 0.4 * Projet$
 
-=> conseillé de mettre en groupe de plus de 2 pour avoir une charge de travail normale
-=> conseillé de se mettre en équipe de 5
-=> changements d'équipe impossible après le début de projet
-=> a priori, possible de se mettre en équipe avec des gens de d'autres groupes, mais à condition que l'EDT soit bon (il faut demander au prof)
+Avec $Proj = \max(0.3 * Projet1 + 0.7 * Projet2, Projet2)$
+
+L'examen terminal sera en décembre et durera 3H.
+
+Les deux projets se dérouleront sur environ 3 et 7 semaines.
+
+### Projets
+
+Les projets sont de taille conséquente, il est donc conseillé de former des équipes de 5. Les changements d'équipe seront impossible après le début des projets.
+
+Il est à priori possible de se mettre en équipe avec des étudiants d'autres groupes, mais à condition que l'EDT soit bon (il faudra demander au professeur).
+
+## Présentation générale
 
 ### Plan du cours
 
--> intéret d'adopter un cycle de vie
--> présentation d'une méthode de dev
--> présenter comment coder, organiser le code, intérêt des test, ...
+- Intéret d'adopter un cycle de vie
+- Présentation d'une méthode de developpement logiciel
+- Présenter comment coder, organiser le code, intérêt des test, ...
 
-## Cours
+Le génie logiciel étudie des méthode et outils qui permettent de déveloper des logiciels de taille conséquente en gardant une qualité élevée, et une maitrise des coûts de developpement et des délais. Cette science ne se concentre pas sur le code, mais sur des solutions qui vont faciliter l'implémentation.
 
-Constat: - bcp de projets n'aboutissent pas à un produit qui répond au cahier des charges
-         - produit est livré hors delai
+### Constat
 
-Le cours va présenter des méthode & outils pour déveloper de slogiciels de qualité en maitrisant les couts de dev & les délais.
+Pour beaucoup de projets informatiques :
 
-Autre pb: le produit doit aussi être maintenu. Des erreurs vont se manifester à cause d'une mauvaise hygiène de code.
+- le produit ne répond pas au cahier des charges.
+- le produit est livré hors délai.
+- lors de la maintenance, des erreurs se manifestent à cause d'une mauvaise hygiène de code.
 
-La matière ne va pas se focus sur le code, mais sur des solutions qui vont faciliter l'implémentation.
+L'objectif est de construire des logiciels ergonomiques, fiables, évolutifs & économiquement viables.
 
+### Indicateurs utiles sur un projet
 
-### Metrics
-
- - volume: nombre d'instruction (en KLS -> Kilo Lignes Sources?)
- - effort: temps nécessaire pour un ingénieur (Homme Ans -> Hommes par année)
- - délai de réalisations
- - durée de vie
-
-### Evolution
-
--> La demande explose pour les logiciels.
-
-(long monologue sur tous les bugs, comme celui d'ariane V ou le bug de l'an 2000)
+ - *Volume* : le nombre d'instruction (en KLS, Kilo Lignes Sources?)
+ - *Effort* : le temps nécessaire pour un ingénieur (en HA -> Hommes par Année)
+ - *Délai de réalisation*
+ - *Durée de vie*
 
 ### La qualité logicielle
 
-Un logiciel peut être observé seon ses qualités, soit externes, soit internes.
-Les qualités externes sont par exemple la validité, la rubustesse, la performance, ...
-Les qualités internes sont par exemple la modularité, la lisibilité, la maintenabilité, ...
+Un logiciel peut être observé selon ses qualités, qui sont :
 
-Les facteurs de qualité ne sont pas nécessairement compatibles 2 à 2, il faut trouver un compromis.
+- soit internes, comme la modularité, la maintenabilité, ...
+- soit externes, comme la validité, la robustesse, la performance, ...
 
-### Le problème du génie logiciel
+Durant le développement, on va principalement voir les qualités internes.
 
-L'objectif est de construire des logicils ergonomoques, fiales, évolutifs & économiques.
-
-## Modèle de développement : le cycle de vie
-
-Avant ce chapitre: bcp de généralités, qui a juste pour but de cadrer la matière.
-
-Ce modèle de dev est spécifique à un type de logiciel (par exemple avec une base de donnée SQL). Un système temps réel
-comme par exemple celui pour ariane utiliserait un autre modèle.
-
-La gestion de projet nécessite de modéliser le processus de dev. lui-mème -> cycle de vie.
-
-Plusieurs modèles de cycle de vie ont été élaborés. Tous ont en commun au minimum les 5 phases essentielles de tout développement :
-- spécification (cahier des charges)
-- conception
-- realisation
-- test
-- exploitation
-
-### Le modèle de la cascade
-
-On réalise chaque étape les unes à la suite des autres, en corrigeant les étapes précédentes à chaque fois si nécéssaires.
-
-Schéma:
- - 1: Spécification (-> 1,2)
- - 2: Conception préliminaire (-> 2,3,1)
- - 3: conception détaillée (-> 4,3,2)
- - 4: réalisation (-> 4, 3)
-
-Avec chaque flèche étant une correction.
-
-Ce modèle a ses limitations, comme par exemple le fait qu'il ne propose pas de tests. Ainsi, les erreurs sont détectées tardivement
-et le processus pour les fixer sera donc long.
-
-### Le modèle en V
-
-Ce modèle est assez vieux, mais plus tellement utilisé.
-
-C'est celui que l'on va adpter pour le premier projet.
-
-Il a été proposé pour combler les lacunes du modèle en cascade (qui est en série), c'est à dire la tardiveté de la détection des erreurs.
-
-Avantages: on peut tester les composants indépendaments les uns des autres + on définit les tests au fur et à mesure
-
-### Le modèle en spirale
-
-Peut experimenté. Lié aux projets innovants ou on arrive pas à cerner les besoins du client.
-
-Le plus avantage est que l'on peut changer le cahier des charges plusieurs fois, ce qui serait très dur sur par exemple un modèle en cascade.
+Les facteurs de qualité ne sont pas nécessairement compatibles 2 à 2, il faut souvent trouver un compromis.
 
 ## Méthode et méthodologie
 
 Une méthode est un semble de règles qui consuisent à une solution.
-Une méthodologue est une agrégation de méthodes, guides, outils, techniques de différents domaines permettant de déduire la manère de résoudre un problème.
+Une méthodologie est une agrégation de méthodes, guides, outils, techniques de différents domaines permettant de déduire la manière de résoudre un problème.
 
 ## Modèles et modélisation
 
@@ -134,11 +91,62 @@ Un modèle doit présenter les qualités suivantes:
 - lisibilité: le modèle doit être ismple à interpréter
 
 Il existe différents types de modèles:
+
 - iconiques
 - analogiques
 - analytiques
 - conceptuels
 
--> exemples de modèles pour les données, comme jackson ou Modèle Entitité Relation (je crois)
--> exemples de modèles pour les fonctions, comme le diagramme hiérarchique de fonctions
--> exemples de modèles pour le comportement, comme par exemple du pseudo code, un modèle mathématiques, ...
+Il faut ainsi choisir un modèle adapté selon ce que l'on décrit :
+
+- pour des données, on peut utiliser la méthode JSP, ou le modèle Entité-Relation
+- pour des fontcions, on peut utiliser un diagramme hiérarchique
+- pour le comportant, on peut utiliser du pseudo code, un modèle mathématique, ...
+
+## Modèle de développement : le cycle de vie
+
+[Voir l'article sur wikipedia](https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_(logiciel))
+
+La gestion de projet nécessite la modélisation du processus de developpement lui-mème. C'est ce à quoi le cycle de vie sert.
+
+Il faut savoir que ce modèle n'est pas unique, et que d'autres modèles existent comme par exemple la méthode agile, ou la méthode merise. Ces méthodes peuvent être plus adaptées à certains types de logiciels.
+
+Plusieurs modèles de cycle de vie ont été élaborés. Tous ont en commun au minimum les 5 phases essentielles de tout développement :
+
+- la spécification (cahier des charges)
+- la conception
+- la réalisation
+- les test
+- l'exploitation
+
+### Le modèle de la cascade
+
+Ce modèle est inspiré de l'industrie du batiment, et repose sur les principes suivants :
+
+- on ne peut pas construire la toiture avant les fondations
+- les conséquences d'une modification en amont du cycle ont un impact majeur sur les coûts en aval 
+
+Ainsi, dans ce modèle, les taches sont executées séquentiellement, et en conséquent les erreurs sont détectées tardivement (lors de la livraison du produit) et le processus pour les fixer sera donc long et coûteux.
+
+[![Modèle de la cascade](cascade.svg)](https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_(logiciel)#/media/Fichier:Mod%C3%A8le_en_cascde.svg)
+
+### Le modèle en V
+
+Ce modèle, qui est encore aujourd'hui très utilisé, a été proposé pour combler les lacunes du modèle en cascade, c'est à dire (principalement) la tardiveté de la détection des erreurs.
+
+Pour cela, il définit des tests qui permettent de tester les composants indépendaments. en effet, chaque phase de développement est associée avec la phase de validation qui lui correspond.
+
+[![Cycle en V](v.svg)](https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_(logiciel)#/media/Fichier:Cycle_de_developpement_en_v.svg)
+
+Note : la "recette" correspond à des test d'acceptation.
+
+Note : C'est le modèle que l'on va adopter pour le premier projet.
+
+### Le modèle en spirale
+
+Cette méthode reprend les différentes étapes du cycle en V. Elle est liée aux projets innovants où il est difficile de cerner les besoins du client.
+
+Elle permet ainsi de pouvoir changer le cahier des charges plusieurs fois, ce qui serait impossible avec un modèle en spirale.
+
+[![Modèle en spirale](spirale.svg)](https://fr.wikipedia.org/wiki/Mod%C3%A8le_en_spirale#/media/Fichier:Spirale_(Boehm,_1988).svg)
+

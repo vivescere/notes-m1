@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>cours</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="premier-cours">Premier cours</h1>
+<p>7 Septembre 2020 (10h)</p>
+<h2 id="informations-utiles">Informations utiles</h2>
+<h3 id="professeurs">Professeurs</h3>
+<ul>
+<li>HAMRI Maamar El Amine, <a href="mailto:amine.hamri@univ-amu.fr">amine.hamri@univ-amu.fr</a></li>
+<li>MASSAT Jean luc, <a href="mailto:jean-luc.massat@univ-amu.fr">jean-luc.massat@univ-amu.fr</a></li>
+<li>YACOUB Aznam, pas de mail donné</li>
+</ul>
+<h3 id="volume-horaire">Volume horaire</h3>
+<ul>
+<li>9 cours de 2h</li>
+<li>9 TD de 2h</li>
+<li>9 TP de 2h</li>
+</ul>
+<h3 id="modalités-de-contrôle-des-connaissances">Modalités de contrôle des connaissances</h3>
+<p>Première session: <span class="math inline"><em>N</em><em>o</em><em>t</em><em>e</em><em>F</em><em>i</em><em>n</em><em>a</em><em>l</em><em>e</em> = 0.6 * <em>E</em><em>x</em><em>a</em><em>m</em><em>e</em><em>n</em><em>T</em><em>e</em><em>r</em><em>m</em><em>i</em><em>n</em><em>a</em><em>l</em> + 0.4 * <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em></span></p>
+<p>Avec <span class="math inline"><em>P</em><em>r</em><em>o</em><em>j</em> = max (0.3 * <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em>1 + 0.7 * <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em>2, <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em>2)</span></p>
+<p>L’examen terminal sera en décembre et durera 3H.</p>
+<p>Les deux projets se dérouleront sur environ 3 et 7 semaines.</p>
+<h3 id="projets">Projets</h3>
+<p>Les projets sont de taille conséquente, il est donc conseillé de former des équipes de 5. Les changements d’équipe seront impossible après le début des projets.</p>
+<p>Il est à priori possible de se mettre en équipe avec des étudiants d’autres groupes, mais à condition que l’EDT soit bon (il faudra demander au professeur).</p>
+<h2 id="présentation-générale">Présentation générale</h2>
+<h3 id="plan-du-cours">Plan du cours</h3>
+<ul>
+<li>Intéret d’adopter un cycle de vie</li>
+<li>Présentation d’une méthode de developpement logiciel</li>
+<li>Présenter comment coder, organiser le code, intérêt des test, …</li>
+</ul>
+<p>Le génie logiciel étudie des méthode et outils qui permettent de déveloper des logiciels de taille conséquente en gardant une qualité élevée, et une maitrise des coûts de developpement et des délais. Cette science ne se concentre pas sur le code, mais sur des solutions qui vont faciliter l’implémentation.</p>
+<h3 id="constat">Constat</h3>
+<p>Pour beaucoup de projets informatiques :</p>
+<ul>
+<li>le produit ne répond pas au cahier des charges.</li>
+<li>le produit est livré hors délai.</li>
+<li>lors de la maintenance, des erreurs se manifestent à cause d’une mauvaise hygiène de code.</li>
+</ul>
+<p>L’objectif est de construire des logiciels ergonomiques, fiables, évolutifs &amp; économiquement viables.</p>
+<h3 id="indicateurs-utiles-sur-un-projet">Indicateurs utiles sur un projet</h3>
+<ul>
+<li><em>Volume</em> : le nombre d’instruction (en KLS, Kilo Lignes Sources?)</li>
+<li><em>Effort</em> : le temps nécessaire pour un ingénieur (en HA -&gt; Hommes par Année)</li>
+<li><em>Délai de réalisation</em></li>
+<li><em>Durée de vie</em></li>
+</ul>
+<h3 id="la-qualité-logicielle">La qualité logicielle</h3>
+<p>Un logiciel peut être observé selon ses qualités, qui sont :</p>
+<ul>
+<li>soit internes, comme la modularité, la maintenabilité, …</li>
+<li>soit externes, comme la validité, la robustesse, la performance, …</li>
+</ul>
+<p>Durant le développement, on va principalement voir les qualités internes.</p>
+<p>Les facteurs de qualité ne sont pas nécessairement compatibles 2 à 2, il faut souvent trouver un compromis.</p>
+<h2 id="méthode-et-méthodologie">Méthode et méthodologie</h2>
+<p>Une méthode est un semble de règles qui consuisent à une solution. Une méthodologie est une agrégation de méthodes, guides, outils, techniques de différents domaines permettant de déduire la manière de résoudre un problème.</p>
+<h2 id="modèles-et-modélisation">Modèles et modélisation</h2>
+<p>La modélisation est une activité qui précède toute décision ou formulation.</p>
+<p>Un modèle est une vue partielle plus ou moins abstraite de l’existant. Un modèle est une interprétation de la compréhenstion d’une situation ou d’une idée de la situation.</p>
+<h3 id="qualité-des-modèles">Qualité des modèles</h3>
+<p>Un modèle doit présenter les qualités suivantes: - abstraction: éviter de faire référence aux détails de toutes les sous parties - raffinement: un sous-ensemble du modèle soit pouvoir être décrit à l’aide d’un autre modèle - lisibilité: le modèle doit être ismple à interpréter</p>
+<p>Il existe différents types de modèles:</p>
+<ul>
+<li>iconiques</li>
+<li>analogiques</li>
+<li>analytiques</li>
+<li>conceptuels</li>
+</ul>
+<p>Il faut ainsi choisir un modèle adapté selon ce que l’on décrit :</p>
+<ul>
+<li>pour des données, on peut utiliser la méthode JSP, ou le modèle Entité-Relation</li>
+<li>pour des fontcions, on peut utiliser un diagramme hiérarchique</li>
+<li>pour le comportant, on peut utiliser du pseudo code, un modèle mathématique, …</li>
+</ul>
+<h2 id="modèle-de-développement-le-cycle-de-vie">Modèle de développement : le cycle de vie</h2>
+<p><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_(logiciel)">Voir l’article sur wikipedia</a></p>
+<p>La gestion de projet nécessite la modélisation du processus de developpement lui-mème. C’est ce à quoi le cycle de vie sert.</p>
+<p>Il faut savoir que ce modèle n’est pas unique, et que d’autres modèles existent comme par exemple la méthode agile, ou la méthode merise. Ces méthodes peuvent être plus adaptées à certains types de logiciels.</p>
+<p>Plusieurs modèles de cycle de vie ont été élaborés. Tous ont en commun au minimum les 5 phases essentielles de tout développement :</p>
+<ul>
+<li>la spécification (cahier des charges)</li>
+<li>la conception</li>
+<li>la réalisation</li>
+<li>les test</li>
+<li>l’exploitation</li>
+</ul>
+<h3 id="le-modèle-de-la-cascade">Le modèle de la cascade</h3>
+<p>Ce modèle est inspiré de l’industrie du batiment, et repose sur les principes suivants :</p>
+<ul>
+<li>on ne peut pas construire la toiture avant les fondations</li>
+<li>les conséquences d’une modification en amont du cycle ont un impact majeur sur les coûts en aval</li>
+</ul>
+<p>Ainsi, dans ce modèle, les taches sont executées séquentiellement, et en conséquent les erreurs sont détectées tardivement (lors de la livraison du produit) et le processus pour les fixer sera donc long et coûteux.</p>
+<p><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_(logiciel)#/media/Fichier:Mod%C3%A8le_en_cascde.svg"><img src="cascade.svg" alt="Modèle de la cascade" /></a></p>
+<h3 id="le-modèle-en-v">Le modèle en V</h3>
+<p>Ce modèle, qui est encore aujourd’hui très utilisé, a été proposé pour combler les lacunes du modèle en cascade, c’est à dire (principalement) la tardiveté de la détection des erreurs.</p>
+<p>Pour cela, il définit des tests qui permettent de tester les composants indépendaments. en effet, chaque phase de développement est associée avec la phase de validation qui lui correspond.</p>
+<p><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_(logiciel)#/media/Fichier:Cycle_de_developpement_en_v.svg"><img src="v.svg" alt="Cycle en V" /></a></p>
+<p>Note : la “recette” correspond à des test d’acceptation.</p>
+<p>Note : C’est le modèle que l’on va adopter pour le premier projet.</p>
+<h3 id="le-modèle-en-spirale">Le modèle en spirale</h3>
+<p>Cette méthode reprend les différentes étapes du cycle en V. Elle est liée aux projets innovants où il est difficile de cerner les besoins du client.</p>
+<p>Elle permet ainsi de pouvoir changer le cahier des charges plusieurs fois, ce qui serait impossible avec un modèle en spirale.</p>
+<p><a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_en_spirale#/media/Fichier:Spirale_(Boehm,_1988).svg"><img src="spirale.svg" alt="Modèle en spirale" /></a></p>
+</body>
+</html>
