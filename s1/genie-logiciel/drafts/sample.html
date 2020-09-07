@@ -20,8 +20,8 @@
   <![endif]-->
 </head>
 <body>
-<h1 id="premier-cours">Premier cours</h1>
-<p>7 Septembre 2020 (10h)</p>
+<p>7 Septembre 2020, scéance de 10h</p>
+<h1 id="introduction">Introduction</h1>
 <h2 id="informations-utiles">Informations utiles</h2>
 <h3 id="professeurs">Professeurs</h3>
 <ul>
@@ -38,19 +38,20 @@
 <h3 id="modalités-de-contrôle-des-connaissances">Modalités de contrôle des connaissances</h3>
 <p>Première session: <span class="math inline"><em>N</em><em>o</em><em>t</em><em>e</em><em>F</em><em>i</em><em>n</em><em>a</em><em>l</em><em>e</em> = 0.6 * <em>E</em><em>x</em><em>a</em><em>m</em><em>e</em><em>n</em><em>T</em><em>e</em><em>r</em><em>m</em><em>i</em><em>n</em><em>a</em><em>l</em> + 0.4 * <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em></span></p>
 <p>Avec <span class="math inline"><em>P</em><em>r</em><em>o</em><em>j</em> = max (0.3 * <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em>1 + 0.7 * <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em>2, <em>P</em><em>r</em><em>o</em><em>j</em><em>e</em><em>t</em>2)</span></p>
-<p>L’examen terminal sera en décembre et durera 3H.</p>
+<p>L’examen terminal sera en décembre et durera 3H. Les documents ne seront pas autorisés.</p>
 <p>Les deux projets se dérouleront sur environ 3 et 7 semaines.</p>
 <h3 id="projets">Projets</h3>
 <p>Les projets sont de taille conséquente, il est donc conseillé de former des équipes de 5. Les changements d’équipe seront impossible après le début des projets.</p>
 <p>Il est à priori possible de se mettre en équipe avec des étudiants d’autres groupes, mais à condition que l’EDT soit bon (il faudra demander au professeur).</p>
 <h2 id="présentation-générale">Présentation générale</h2>
+<p><strong>NOTE</strong> : regarder le poly sur ametice sera surement plus représentatif du cours, l’intégralité du contenu est (sera) dessus.</p>
+<p>Le génie logiciel étudie des méthode et outils qui permettent de déveloper des logiciels de taille conséquente en gardant une qualité élevée, et une maitrise des coûts de developpement et des délais. Cette science ne se concentre pas sur le code, mais sur des solutions qui vont faciliter l’implémentation.</p>
 <h3 id="plan-du-cours">Plan du cours</h3>
 <ul>
 <li>Intéret d’adopter un cycle de vie</li>
 <li>Présentation d’une méthode de developpement logiciel</li>
 <li>Présenter comment coder, organiser le code, intérêt des test, …</li>
 </ul>
-<p>Le génie logiciel étudie des méthode et outils qui permettent de déveloper des logiciels de taille conséquente en gardant une qualité élevée, et une maitrise des coûts de developpement et des délais. Cette science ne se concentre pas sur le code, mais sur des solutions qui vont faciliter l’implémentation.</p>
 <h3 id="constat">Constat</h3>
 <p>Pour beaucoup de projets informatiques :</p>
 <ul>
@@ -61,10 +62,10 @@
 <p>L’objectif est de construire des logiciels ergonomiques, fiables, évolutifs &amp; économiquement viables.</p>
 <h3 id="indicateurs-utiles-sur-un-projet">Indicateurs utiles sur un projet</h3>
 <ul>
-<li><em>Volume</em> : le nombre d’instruction (en KLS, Kilo Lignes Sources?)</li>
-<li><em>Effort</em> : le temps nécessaire pour un ingénieur (en HA -&gt; Hommes par Année)</li>
+<li><em>Volume</em> : le nombre d’instruction (en KLS : Kilo Lignes Sources)</li>
+<li><em>Effort</em> : le temps nécessaire pour un ingénieur (en HA : <a href="https://fr.wiktionary.org/wiki/homme-ann%C3%A9e">Hommes Années</a>)</li>
 <li><em>Délai de réalisation</em></li>
-<li><em>Durée de vie</em></li>
+<li><em>Durée de vie</em> : le temps pendant lequel le logiciel devra être maintenu</li>
 </ul>
 <h3 id="la-qualité-logicielle">La qualité logicielle</h3>
 <p>Un logiciel peut être observé selon ses qualités, qui sont :</p>
@@ -74,26 +75,11 @@
 </ul>
 <p>Durant le développement, on va principalement voir les qualités internes.</p>
 <p>Les facteurs de qualité ne sont pas nécessairement compatibles 2 à 2, il faut souvent trouver un compromis.</p>
-<h2 id="méthode-et-méthodologie">Méthode et méthodologie</h2>
-<p>Une méthode est un semble de règles qui consuisent à une solution. Une méthodologie est une agrégation de méthodes, guides, outils, techniques de différents domaines permettant de déduire la manière de résoudre un problème.</p>
-<h2 id="modèles-et-modélisation">Modèles et modélisation</h2>
+<h2 id="définitions">Définitions</h2>
+<p>Une méthode est un semble de règles qui consuisent à une solution.</p>
+<p>Une méthodologie est une agrégation de méthodes, guides, outils, techniques de différents domaines permettant de déduire la manière de résoudre un problème.</p>
 <p>La modélisation est une activité qui précède toute décision ou formulation.</p>
-<p>Un modèle est une vue partielle plus ou moins abstraite de l’existant. Un modèle est une interprétation de la compréhenstion d’une situation ou d’une idée de la situation.</p>
-<h3 id="qualité-des-modèles">Qualité des modèles</h3>
-<p>Un modèle doit présenter les qualités suivantes: - abstraction: éviter de faire référence aux détails de toutes les sous parties - raffinement: un sous-ensemble du modèle soit pouvoir être décrit à l’aide d’un autre modèle - lisibilité: le modèle doit être ismple à interpréter</p>
-<p>Il existe différents types de modèles:</p>
-<ul>
-<li>iconiques</li>
-<li>analogiques</li>
-<li>analytiques</li>
-<li>conceptuels</li>
-</ul>
-<p>Il faut ainsi choisir un modèle adapté selon ce que l’on décrit :</p>
-<ul>
-<li>pour des données, on peut utiliser la méthode JSP, ou le modèle Entité-Relation</li>
-<li>pour des fontcions, on peut utiliser un diagramme hiérarchique</li>
-<li>pour le comportant, on peut utiliser du pseudo code, un modèle mathématique, …</li>
-</ul>
+<p>Un modèle est une interprétation de la compréhenstion d’une situation ou d’une idée de la situation.</p>
 <h2 id="modèle-de-développement-le-cycle-de-vie">Modèle de développement : le cycle de vie</h2>
 <p><a href="https://fr.wikipedia.org/wiki/Cycle_de_d%C3%A9veloppement_(logiciel)">Voir l’article sur wikipedia</a></p>
 <p>La gestion de projet nécessite la modélisation du processus de developpement lui-mème. C’est ce à quoi le cycle de vie sert.</p>
