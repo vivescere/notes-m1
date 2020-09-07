@@ -15,6 +15,10 @@ Ce repo contient mes notes de cours, TD et TP pour mon année 2020-2021 de M1 in
 - Programmation objet concurrente : [Cours](s1/programmation-objet-concurrente/pdfs/cours.pdf?raw=true), [TD](s1/programmation-objet-concurrente/pdfs/td.pdf?raw=true), [TP](s1/programmation-objet-concurrente/pdfs/tp.pdf?raw=true)
 - Réseaux : [Cours](s1/reseaux/pdfs/cours.pdf?raw=true), [TD](s1/reseaux/pdfs/td.pdf?raw=true), [TP](s1/reseaux/pdfs/tp.pdf?raw=true)
 
+### Vers les repos d'autres personnes
+
+- [FrekiWolfhart/notes_master_semestre1](https://github.com/FrekiWolfhart/notes_master_semestre1)
+
 ## Outils utilisés
 
 - [fd](https://github.com/sharkdp/fd) : utilisé dans [compile-all.sh](compile-all.sh) pour trouver tous les cours et lancer `make` dans chaque dossier en parallèle
