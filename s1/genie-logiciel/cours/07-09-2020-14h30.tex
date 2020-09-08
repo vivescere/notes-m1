@@ -1,0 +1,131 @@
+\section{Second cours}
+
+7 septembre 2020, 14h30
+
+\hypertarget{uxe9tude-de-cas}{%
+\subsection{Étude de cas}\label{uxe9tude-de-cas}}
+
+Cette partie présente une étude de cas sur un système de commande pour
+le chargement automatique d'un chariot.
+
+Nous ne réalisons pour le moment que la spécification.
+
+\hypertarget{uxe8re-phase-moduxe9lisation-de-lenvironnement}{%
+\subsubsection{1ère phase : Modélisation de
+l'environnement}\label{uxe8re-phase-moduxe9lisation-de-lenvironnement}}
+
+On commence par déterminer et caractériser les objets de
+l'environnement. On peut ensuite les classer en différentes catégories :
+données, activités et relations. C'est dans cette situation que l'on
+pourrait par exemple utiliser UML.
+
+Dans notre exemple, on a 4 objets :
+
+\begin{itemize}
+\tightlist
+\item
+  le système de contrôle-commande (notre ``programme'')
+\item
+  dans l'environnement:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    l'opérateur
+  \item
+    le chariot
+  \item
+    le tapis chargeur
+  \end{itemize}
+\end{itemize}
+
+On utilise 3 variables à états discrets :
+
+\begin{itemize}
+\tightlist
+\item
+  P (position) : \(P \leq P2\), \(P2 < P < P1\),
+  \(P > P1\)
+\item
+  V (vitesse) : \(+V\) (vers la droite), \(-V\) (vers la gauche), 0
+\item
+  T (trappe) : ouverte, fermée
+\end{itemize}
+
+On note :
+
+\begin{itemize}
+\tightlist
+\item
+  V dépend de la commande de déplacement appliquée : Avancer, Reculer,
+  Arrêter
+\item
+  T dépend de la commande d'ouverture appliquée : Ouvrir, Fermer
+\end{itemize}
+
+On peut alors créer un automate, ici pour la trappe :
+
+\begin{center}
+	\begin{tikzpicture}[shorten >= 1pt,node distance=4cm,on grid,auto]
+		\node[state] (ouverte) {Ouverte};
+		\node[state] (fermée) [left=of ouverte] {Fermée};
+		\path[->] 
+		(ouverte) edge [bend left, above] node {Fermer} (fermée)
+		edge [loop above] node {Ouvrir} ()
+		(fermée) edge [bend left, above] node {Ouvrir} (ouverte)
+		edge [loop above] node {Fermer} ();
+		\draw[<-] (fermée) -- node[above] {} ++(-1.5cm,0);
+	\end{tikzpicture}
+\end{center}
+
+Ou alors pour la vitesse du chariot :
+
+\begin{center}
+	\begin{tikzpicture}[shorten >= 1pt,node distance=4cm,on grid,auto,state/.style={circle, draw, minimum size=1.5cm}]
+		\node[state] (p2) {$P \leqslant P2$};
+		\node[state] (depd) [above right=of p2] {$\rightarrow$};
+		\node[state] (depg) [below right=of p2] {$\leftarrow$};
+		\node[state] (p1) [below right=of depd] {$P > P2$};
+		\draw[<-] (p2) -- node[below] {} ++(-1.5cm,0);
+		\path[->]
+		(p2) edge node {$+V$} (depd)
+		(depd) edge node {$\emptyset$} (p1)
+		(p1) edge [bend right, above] node {$-V$} (depg)
+		(depg) edge node {$\emptyset$  ($P \leqslant P2$)} (p2)
+		edge [bend right, above] node {$\emptyset$ ($P > P2$)} (p1);
+	\end{tikzpicture}
+\end{center}
+
+Avec $\leftarrow$ un déplacement à gauche, et $\rightarrow$ un déplacement à droite. Attention, on n'est pas forcément au point $P1$ à l'état $P > P2$, juste à l'arrêt à droite du point $P2$.
+
+\hypertarget{nd-phase-duxe9termination-des-entruxe9es-et-des-sorties}{%
+	\subsubsection{2\textsuperscript{e} phase : détermination des entrées et des
+sorties}\label{nd-phase-duxe9termination-des-entruxe9es-et-des-sorties}}
+
+On spécifie le système qui gère les entrées et les sorties de chaque
+objet, c'est-à-dire les commandes que l'on envoie aux objets.
+
+\begin{figure}[H]
+	\centerfloat
+	\resizebox{1.3\textwidth}{!}{%
+	%\makebox{\pagewidth}
+	\begin{tikzpicture}[shorten >= 1pt,node distance=4cm,on grid,auto,state/.style={circle, draw, minimum size=2.5cm}]
+		\node[state] (p2) [align=center] {à l'arrêt \\ $P2$};
+		\node[state] (vidage) [below right=of p2] [align=center] {vidage \\ charriot};
+		\node[state] (depd) [above right=of vidage, align=center] {charriot \\ se déplace};
+		\node[state] (depg) [below right=of depd, align=center] {déplacement \\ à gauche};
+		\node[state] (p1) [above right=of depg, align=center] {charriot \\ à l'arrêt};
+		\path[->]
+		(p2) edge node [align=center] {cycle\\+V} (depd)
+		(depd) edge node [align=center] {capteur droit / $\emptyset$\\mettre en marche} (p1)
+		(p1) edge node [align=center] {$temps \geqslant temps\_remplissage$ \\ mettre\_à\_l'arrêt \\ -V} (depg)
+		(depg) edge node [align=center] {capteur gauche / $\emptyset$\\ouvrir} (vidage)
+		(vidage) edge node [align=center] {$temps \geqslant$ temps\_vidage\\fermer} (p2);
+		\draw[<-] (p2) -- node[below] {} ++(0,2cm);
+
+	\end{tikzpicture}
+	}%
+\end{figure}
+
+On suppose qu'à l'état initial le charriot est à l'arrêt en P2, la trappe est fermée et le tapis chargeur est à l'arrêt. Il faudra compléter ce modèle par l'arrêt d'urgence.
+

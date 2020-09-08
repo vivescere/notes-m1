@@ -10,3 +10,23 @@
 
 % Disable paragraph indenting
 \setlength{\parindent}{0pt}
+
+% Enable math blocks
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Draw automatas
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,calc}
+
+% Command to center a figure that is larger than \textwidth
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+
+\usepackage{float}
+
