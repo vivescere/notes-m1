@@ -111,10 +111,10 @@ objet, c'est-à-dire les commandes que l'on envoie aux objets.
 	%\makebox{\pagewidth}
 	\begin{tikzpicture}[shorten >= 1pt,node distance=4cm,on grid,auto,state/.style={circle, draw, minimum size=2.5cm}]
 		\node[state] (p2) [align=center] {à l'arrêt \\ $P2$};
-		\node[state] (vidage) [below right=of p2] [align=center] {vidage \\ charriot};
-		\node[state] (depd) [above right=of vidage, align=center] {charriot \\ se déplace};
+		\node[state] (vidage) [below right=of p2] [align=center] {vidage \\ chariot};
+		\node[state] (depd) [above right=of vidage, align=center] {chariot \\ se déplace};
 		\node[state] (depg) [below right=of depd, align=center] {déplacement \\ à gauche};
-		\node[state] (p1) [above right=of depg, align=center] {charriot \\ à l'arrêt};
+		\node[state] (p1) [above right=of depg, align=center] {chariot \\ à l'arrêt};
 		\path[->]
 		(p2) edge node [align=center] {cycle\\+V} (depd)
 		(depd) edge node [align=center] {capteur droit / $\emptyset$\\mettre en marche} (p1)
@@ -127,5 +127,5 @@ objet, c'est-à-dire les commandes que l'on envoie aux objets.
 	}%
 \end{figure}
 
-On suppose qu'à l'état initial le charriot est à l'arrêt en P2, la trappe est fermée et le tapis chargeur est à l'arrêt. Il faudra compléter ce modèle par l'arrêt d'urgence.
+On suppose qu'à l'état initial le chariot est à l'arrêt en P2, la trappe est fermée et le tapis chargeur est à l'arrêt. Il faudra compléter ce modèle par l'arrêt d'urgence.
 
