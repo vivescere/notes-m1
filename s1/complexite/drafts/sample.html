@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>cours</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+    ':35729/livereload.js?snipver=1"></' + 'script>')
+  </script> 
+</head>
+<body>
+<h1 id="premier-cours">Premier cours</h1>
+<p>9 septembre 2020, 10h</p>
+<h2 id="informations-utiles">Informations utiles</h2>
+<p>Répartition horaire :</p>
+<ul>
+<li>12h de cours</li>
+<li>12h td</li>
+<li>14h tp (avec une partie projet)</li>
+</ul>
+<p>Le professeur en CM est Djamal Habet, et le responsable des TPs est Emmanuel Godard.</p>
+<p>Evaluation :</p>
+<ul>
+<li>Session 1: <span class="math inline">\(\frac{2}{3}ET+\frac{1}{3}TP\)</span></li>
+<li>Session 2: <span class="math inline">\(Max(ET, \frac{2}{3}ET+\frac{1}{3}TP)\)</span></li>
+<li>La note de TP contient la note de projet.</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>L’an dernier était focus sur le modèle application, cette année on va plus s’intéresser au modèle de fonctionnement du réseau.</p>
+<p>Contenu du cours : - Introduction &amp; notions de base - Modèle OSI - Pile TCP/IP - Applications</p>
+<h3 id="introductions">Introductions</h3>
+<p>-&gt; Les réseaux sont partits d’un service permettant de relier des terminaux à des gros ordinateurs centraux vers un service premettant d’interconnecter plusieurs types de matériel. -&gt; Les services offerts font partie de la vie courante. -&gt; Un graphe permet de représenter facilement un réseau. -&gt; Les réseaux ont une taille (géographique), par exemple un LAN est local seulement qui va de quelques mètres à quelques km, un PAN est un réseau personnel, un WAN (Wide Area Network) est plus large (pays/monde), un bus est très petit (sur une carte mère par exemple), un MAN (Metropolitan Area Network) est à l’échelle d’une ville, …</p>
+<h3 id="topologie">Topologie</h3>
+<p>Très détaillé sur le transparent.</p>
+<p>On a plusieurs topologies pour les réseaux, comme : - en diffusion (eg: bus, anneau, satellite), comme pour la radio; C’est l’adresse spécifique placée dans le message qui permet de déterminer qui va le recevoir. Ce mode est très utilié pour les réseaux locaux (eg: en salle de TP). On peut représenter ce réseau par un arbre. - en point à point (eg: étoile, boucle simple, boucle double, maillage régulier, maillage irréglier)</p>
+<p>On va donc utiliser des algorithms comme dijkstra pour router les messages.</p>
+<h3 id="communication">Communication</h3>
+<h4 id="avec-connexion">Avec connexion</h4>
+<p>Comme pour le téléphone, l’émetteur demande l’établissement d’une connexion par l’envoi d’un bloc de données spécial. Si la connexion est aceptée, elle est établie par la mise en place d’un circuit virtuel.</p>
+<p>Exemple: TCP</p>
+<h4 id="sans-connexion">Sans connexion</h4>
+<p>On appelle les blocs de données datagrammes. Ils sont tranmis sans vérifier qu’un circuit existe, il suffit juste d’une adresse de destination.</p>
+<p>Exemple: UDP</p>
+<h3 id="commutation">Commutation</h3>
+<h4 id="commutation-de-circuits">Commutation de circuits</h4>
+<p>Consiste à créer dans le réseau un circuit entre l’émetteur et le récepteur avant que ceux-ci commencer à échanger des informations.</p>
+<p>C’est ce que les opératrices au tout début du téléphone faisaient.</p>
+<h4 id="commutation-de-messages">Commutation de messages</h4>
+<p>Consiste à envoyer un message de l’émetteur jusqu’au récepteur en passant de noeud de commutation en noeud de commutation.</p>
+<p>On risque d’avoir des problèmes avec les messages longs. -&gt; taux d’erreurs résiduel</p>
+<h4 id="commutation-de-paquets">Commutation de paquets</h4>
+<p>Consiste à découper un message en paquets avant de l’envoyer. On éviter ainsi les erreurs avec les messages longs.</p>
+<p>Problème: il faut que le récepteur final sache reconstituer le message, et donc il faut un protocole particulier.</p>
+<p>On va devoir avoir plusieurs champs dans chaque paquet: - un ID de message - un nombre pour l’ordre - un booléen pour savoir si c’est le dernier paquet</p>
+<h4 id="commutation-des-cellules">Commutation des cellules</h4>
+<p>Pareil que la commutation de paquets, avec une taille fixée de paquet de 53 octets (5 d’en-tête et 48 de données).</p>
+<p>La faible taille, permet de limiter les erreurs.</p>
+<h3 id="la-normalisation">La normalisation</h3>
+<p>-&gt; distinction norme/standard, une norme est étable par un organisme donc c’est officiellement le rôle alors qu’un standard est rédigé par une entité non reconnue -&gt; rôle des organismes de normalisation: définir un cadre, souvent nommé modèle, et aussi garantir la complétude &amp; l’intégrité des spécifications -&gt; organismes les plus connus: ISO, UTI (ex CCITT), IEEE</p>
+<h4 id="le-modèle-osi">Le modèle OSI</h4>
+<p>=&gt; Operated Open System</p>
+<p>Architecture en couche Double objectif: - avoir à remplacer seulement le ou les modules nécessaires - se procurer les modules chez différents fournisseurs</p>
+<p>insérer schéma en U du modèle OSI</p>
+<p>à l’envoi d’un message, on le fait passer par toutes les couches. Chaque couche ajoute sont en-tête (la couche laison ajoute aussi à la fin du message).</p>
+<p>à la réception, on fait l’inverse.</p>
+<p>On a 7 couches: - application 7 - présentation 6 - session 5 - transport 4 - réseau 3 - liaison 2 - physique 1</p>
+<p>Les 4 premières couches sont orientées réseau (en général faites par l’OS), les 4 dernières sont orientées application.</p>
+<p>Attention: ce modèle est <strong>théorique</strong>. On peut se permettre de changer les choses un peu.</p>
+<p>Par exemple, les couches physique et les couches laison sont un peu liées (pas totalement séparées).</p>
+<h5 id="la-couche-physique">La couche physique</h5>
+<p>Elle fournit les moyens mécaniques, électriques, fonctionnels et procédurax nécessaires à l’éactivation des connexions physiques destinnées à la ttransmission de bits entre deux entités de laison de données.</p>
+<p>=&gt; On transmet du binaire.</p>
+<h6 id="sens-de-transmission">Sens de transmission</h6>
+<p>-&gt; mode simplex (eg: radio) -&gt; mode semi-duplex (eg: talkie walkie) -&gt; mode duplex (eg: websocket)</p>
+<h6 id="transmission-parallèle">Transmission parallèle</h6>
+<p>Les bits d’un même caractère sont envoyés en même temps chacun sur un fil distinct.</p>
+<p>Pose des problèmes de synchronisation et n’est utilisé que sur des courtes distances (eg: bus).</p>
+<h6 id="transmission-en-séérie">Transmission en séérie</h6>
+<p>Les bits sont envoyés les uns derrière les autres de manière synchrone ou asynchrone.</p>
+<p>Synchrone -&gt; l’émetteur et le récepteur se mettent d’accord sur une base detemps régulier. Asynchrone -&gt; pas de négociations, chaque caractère est précédé d’un bit de start et suivi d’un bit de stop. de nos jours, un seul bit de suffit plus</p>
+<h5 id="débits">Débits</h5>
+<p>Quel que soit le monde de transmission, on peut compter le débit de la ligne en Bauds : le nombre de tops d’horloge en une seconde.</p>
+<p>Le nombre de bauds correspond au nombre d’émissions autorisés, donc: Bauds = Bits/S</p>
+<p>Si le signal prend <span class="math inline">\(2^n\)</span> valeurs distinctes, on dit que sa valence est de n.</p>
+</body>
+</html>
