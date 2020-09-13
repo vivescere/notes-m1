@@ -11,7 +11,7 @@ d'un certain rang \(n_0\), la fonction est majorée par \(O(Cf(n))\),
 avec \(C\) une constante :
 
 $$
-\exists C \in \\R, \exists n_0 \in \\N, \forall n \geqslant n_0, g(n) \leqslant Cf(n)
+\exists C \in \\R, \exists n_0 \in N, \forall n \geqslant n_0, g(n) \leqslant Cf(n)
 $$
 
 \hypertarget{question-1}{%
@@ -46,19 +46,18 @@ $$
 \end{itemize}
 
 \[
-\forall C \in \\R, \forall n_0 \in \\N, \exists n \geqslant n_0, g(n) \geqslant Cf(n)
+\forall C \in \\R, \forall n_0 \in N, \exists n \geqslant n_0, g(n) \geqslant Cf(n)
 \]
 
 \[
-\iff \forall C \in \\R, \forall n_0 \in \\N, \exists n \geqslant n_0, n^3+1000n^2+n+8 \geqslant Cn^2 
+\iff \forall C \in \\R, \forall n_0 \in N, \exists n \geqslant n_0, n^3+1000n^2+n+8 \geqslant Cn^2 
 \]
 
 \[
-\iff \forall C \in \\R, \forall n_0 \in \\N, \exists n \geqslant n_0, n + 1000 + \frac{1}{n} + \frac{8}{n^2} \geqslant C
+\iff \forall C \in \\R, \forall n_0 \in N, \exists n \geqslant n_0, n + 1000 + \frac{1}{n} + \frac{8}{n^2} \geqslant C
 \]
 
-$\forall C \in \\N$, il existe
-$n > C - 1000 - \frac{1}{n} - \frac{8}{n^2}$
+$\forall C \in N$, il existe $n > C - 1000 - \frac{1}{n} - \frac{8}{n^2}$
 
 \hypertarget{question-2}{%
 \subsubsection{Question 2}\label{question-2}}
@@ -87,12 +86,12 @@ $n > C - 1000 - \frac{1}{n} - \frac{8}{n^2}$
   \(g(n) = 3n+8 \notin \theta(n^2)\)
 
   Il suffit de montrer que
-  \(\forall C_1\in\\R, \forall n_0 \in \\N, \exists n \geqslant n_0, C_1n^2 > 3n+8\)
+  \(\forall C_1\in\\R, \forall n_0 \in N, \exists n \geqslant n_0, C_1n^2 > 3n+8\)
 
   \(\iff C_1n^2>3n+8 \iff C_1 > \frac{3}{n} + \frac{8}{n^2}\)
 
-  \(\forall n \in \\N^*, \frac{3}{n}+\frac{8}{n^2} \leqslant 11\), donc
-  avec \(C_1 > 11\) on a \(\forall n \in \\N^*, C_1n^2 > 3n+8\)
+  \(\forall n \in N^*, \frac{3}{n}+\frac{8}{n^2} \leqslant 11\), donc
+  avec \(C_1 > 11\) on a \(\forall n \in N^*, C_1n^2 > 3n+8\)
 \end{itemize}
 
 \hypertarget{exercice-2}{%

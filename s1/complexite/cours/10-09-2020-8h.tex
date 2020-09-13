@@ -1,0 +1,210 @@
+\hypertarget{premier-cours}{%
+\section{Premier cours}\label{premier-cours}}
+
+10 Septembre 2020, 8h
+
+\hypertarget{informations-utiles}{%
+\subsection{Informations utiles}\label{informations-utiles}}
+
+Professeur principal :
+
+Philippe Jégou /
+\href{mailto:philippe.jegou@univ-amu.fr}{\nolinkurl{philippe.jegou@univ-amu.fr}}
+
+Volume horaire :
+
+\begin{itemize}
+\tightlist
+\item
+  10 séances de 2h de cours; premiers 5 avec jégou, dernier 5 avec
+  Porreca
+\item
+  10 séances de 2H de TD;
+\item
+  7 séances de 2h;
+\end{itemize}
+
+Le prof va beaucoup utiliser ametice. Pour envoyer un message, commencer
+l'objet par ``{[}M1-Info-Complexite{]}''
+
+Evaluation :
+
+\begin{itemize}
+\tightlist
+\item
+  Session 1 : \(0.75 * max((CC + (2 * ET)) / 3, ET) + 0.25 * TP\) avec
+  CC: contrôle continu a priori avec un partiel à la ``mi-temps'' avec
+  TP: petits projets réalisés en groupes pendant les TP
+\item
+  Session 2 : \(max(ET, (0.75 * ET) + 0.25 * TP)\)
+\end{itemize}
+
+\hypertarget{connaissances-requises}{%
+\subsection{Connaissances requises}\label{connaissances-requises}}
+
+\begin{itemize}
+\tightlist
+\item
+  Algorithmique
+
+  \begin{itemize}
+  \tightlist
+  \item
+    conception d'algorithmes
+  \item
+    analyse de la complexité (srtout pire des cas et ``grand O'')
+  \item
+    algorithmique des graphes
+  \end{itemize}
+\item
+  Théorie de Langages Formels :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Notions de base : alphabet, mots, langages, etc..
+  \item
+    automates finis
+  \item
+    machines de turing
+  \end{itemize}
+\item
+  Logique des propositions
+
+  \begin{itemize}
+  \tightlist
+  \item
+    notions de base: variables, clauses, interprétation, CNF
+  \item
+    traitement de formules: quine, dpll, résolution
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{ruxe9fuxe9rences}{%
+\subsection{Références}\label{ruxe9fuxe9rences}}
+
+-\textgreater{} Computers and Interactability - A guide to the Theory of
+NP-Completeness. Freeman And Co., 1979
+
+\hypertarget{plan}{%
+\subsection{Plan}\label{plan}}
+
+\hypertarget{de-quoi-on-va-parler}{%
+\subsubsection{De quoi on va parler?}\label{de-quoi-on-va-parler}}
+
+-\textgreater{} estimer le temps d'exec d'un algo -\textgreater{}
+déterminer la difficulté d'un problème (sa complexité) -\textgreater{}
+\(P!=NP\) ?
+
+\hypertarget{objectifs}{%
+\subsubsection{Objectifs}\label{objectifs}}
+
+-\textgreater{} identifier les problèmes polynomiaux -\textgreater{}
+identifier les problèmes non-polynomiaux, et évaluer leur difficulté
+
+\hypertarget{plan-1}{%
+\subsubsection{plan}\label{plan-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  complexité, présentation et introduction
+\item
+  rappels d'algorithmique et de complexité
+\item
+  problèmes et complexité des problèmes
+\item
+  cadre formel
+\item
+  Classe P
+\item
+  classe NP (changement de prof)
+\item
+  \ldots{}
+\end{itemize}
+
+\hypertarget{rappels-algorithmique-et-complexituxe9}{%
+\subsection{Rappels, algorithmique et
+complexité}\label{rappels-algorithmique-et-complexituxe9}}
+
+-\textgreater{} analyse de complexité -\textgreater{} analyse des
+graphes
+
+\hypertarget{complexituxe9}{%
+\subsubsection{Complexité}\label{complexituxe9}}
+
+objectif : estimer les temps de calcul, ne pas perde de temps à
+implémenter un algo qui ne sera pas efficace, concevoir les algos les
+plus rapides avant de les implémenter, ne pas être limité par une
+machine
+
+on va introduire un modèle pour estimer le temps d'execution d'un
+programme
+
+\hypertarget{moduxe8le}{%
+\paragraph{modèle}\label{moduxe8le}}
+
+principe 1 : actions élémentaires exécutables en temps constant
+
+on identifie: - les affectations - les opérations arithmétiques - les
+tests - les branchements
+
+Pour simplifier, on suppose que chacune de ses instuctions prennent le
+même temps. De plus, on ignore le cout des branchements.
+
+principe 2 : l'analyse s'opère en fonction de la taille de la donnée en
+entrée
+
+La taille est par exemple la taille d'un tableau, ou la taille du codage
+d'un entier.
+
+principe 3 : l'analyse prend on compte le comportement asymptotique du
+temps
+
+-\textgreater{} comment évolue le temps de calcul quand la taille de la
+donnée s'acroit
+
+-\textgreater{} O(n) -\textgreater{} theta(n)
+
+principe 4 : pire des cas
+
+\begin{itemize}
+\tightlist
+\item
+  l'analyse de la complexité en moyenne n'est pas facile (comment créer
+  un jeu de donnée?); de plus elle n'est pas pertinente pour l'UE
+\item
+  analyse lisse d'algorithme permet d'éviter les pb de l'analyse de la
+  complexité en moyenne, mais elle n'est pas pertinente non plue
+\item
+  l'analyse de la complexité dans le meilleur des cas ne l'est pas non
+  plus
+\end{itemize}
+
+\hypertarget{ruxe9cap}{%
+\paragraph{Récap}\label{ruxe9cap}}
+
+Rappel : O est une majoration -\textgreater{} insérer formule O O(f(n))
+= \{g: N -\textgreater{} R* : \} \ldots{}
+
+et \(\theta\) est exact -\textgreater{} insérer formule theta(f(n)) =
+\{g: N -\textgreater{} R* : \} \ldots{}
+
+et grand $\omega$ est la minoration (pas à savoir)
+
+\hypertarget{rappels-sur-le-codage}{%
+\paragraph{Rappels sur le codage}\label{rappels-sur-le-codage}}
+
+Codage unaire: n bits Codage binaire: log2(n) + 1
+
+Certains algos, comme celui (naif) pour vérifier un nombre premier, est
+exponentiel à cause du codage.
+
+\hypertarget{validituxe9}{%
+\paragraph{Validité}\label{validituxe9}}
+
+Le modèle n'est pas forcément valide dans tous les cas, il n'est pas
+forcément assez précis.
+
+Dans le chapitre 4 (cadre formel), on introduira un modèle plus précis
+(qui se base sur une machine de turing).

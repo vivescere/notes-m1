@@ -1,0 +1,240 @@
+\hypertarget{premier-cours}{%
+\section{Premier cours}\label{premier-cours}}
+
+9 septembre 2020, 10h
+
+\hypertarget{informations-utiles}{%
+\subsection{Informations utiles}\label{informations-utiles}}
+
+Répartition horaire :
+
+\begin{itemize}
+\tightlist
+\item
+  12h de cours
+\item
+  12h td
+\item
+  14h tp (avec une partie projet)
+\end{itemize}
+
+Le professeur en CM est Djamal Habet, et le responsable des TPs est
+Emmanuel Godard.
+
+Evaluation :
+
+\begin{itemize}
+\tightlist
+\item
+  Session 1: \(\frac{2}{3}ET+\frac{1}{3}TP\)
+\item
+  Session 2: \(Max(ET, \frac{2}{3}ET+\frac{1}{3}TP)\)
+\end{itemize}
+
+Les scéances de TP contiendront un projet.
+
+\hypertarget{introduction-rappels}{%
+\subsection{Introduction \& rappels}\label{introduction-rappels}}
+
+L'UE réseau de la L3 se concentrait sur le modèle application, celle de
+cette année va plus s'intéresser au fonctionnement du réseau dans sa
+globalité.
+
+Contenu du cours :
+
+\begin{itemize}
+\tightlist
+\item
+  Introduction \& notions de base
+\item
+  Modèle OSI
+\item
+  Pile TCP/IP
+\item
+  Applications
+\end{itemize}
+
+Note : Un graphe permet de représenter facilement un réseau.
+
+\hypertarget{taille-des-ruxe9seaux}{%
+\subsubsection{Taille des réseaux}\label{taille-des-ruxe9seaux}}
+
+Les réseaux ont une taille (géographique) :
+
+\begin{itemize}
+\tightlist
+\item
+  un bus est à une échelle très petite (eg: carte mère)
+\item
+  un LAN ne va que de quelques m à quelques km
+\item
+  un MAN (Metropolitan Area Network) est à l'échelle d'une ville
+\end{itemize}
+
+par exemple un LAN est local seulement qui va de quelques mètres à
+quelques km, un PAN est un réseau personnel, un WAN (Wide Area Network)
+est plus large (pays/monde), un bus est très petit (sur une carte mère
+par exemple), un MAN (Metropolitan Area Network) est à l'échelle d'une
+ville, \ldots{}
+
+\hypertarget{topologie}{%
+\subsubsection{Topologie}\label{topologie}}
+
+Très détaillé sur le transparent.
+
+On a plusieurs topologies pour les réseaux, comme : - en diffusion (eg:
+bus, anneau, satellite), comme pour la radio; C'est l'adresse spécifique
+placée dans le message qui permet de déterminer qui va le recevoir. Ce
+mode est très utilié pour les réseaux locaux (eg: en salle de TP). On
+peut représenter ce réseau par un arbre. - en point à point (eg: étoile,
+boucle simple, boucle double, maillage régulier, maillage irréglier)
+
+On va donc utiliser des algorithms comme dijkstra pour router les
+messages.
+
+\hypertarget{communication}{%
+\subsubsection{Communication}\label{communication}}
+
+\hypertarget{avec-connexion}{%
+\paragraph{Avec connexion}\label{avec-connexion}}
+
+Comme pour le téléphone, l'émetteur demande l'établissement d'une
+connexion par l'envoi d'un bloc de données spécial. Si la connexion est
+aceptée, elle est établie par la mise en place d'un circuit virtuel.
+
+Exemple: TCP
+
+\hypertarget{sans-connexion}{%
+\paragraph{Sans connexion}\label{sans-connexion}}
+
+On appelle les blocs de données datagrammes. Ils sont tranmis sans
+vérifier qu'un circuit existe, il suffit juste d'une adresse de
+destination.
+
+Exemple: UDP
+
+\hypertarget{commutation}{%
+\subsubsection{Commutation}\label{commutation}}
+
+\hypertarget{commutation-de-circuits}{%
+\paragraph{Commutation de circuits}\label{commutation-de-circuits}}
+
+Consiste à créer dans le réseau un circuit entre l'émetteur et le
+récepteur avant que ceux-ci commencer à échanger des informations.
+
+C'est ce que les opératrices au tout début du téléphone faisaient.
+
+\hypertarget{commutation-de-messages}{%
+\paragraph{Commutation de messages}\label{commutation-de-messages}}
+
+Consiste à envoyer un message de l'émetteur jusqu'au récepteur en
+passant de noeud de commutation en noeud de commutation.
+
+On risque d'avoir des problèmes avec les messages longs. -\textgreater{}
+taux d'erreurs résiduel
+
+\hypertarget{commutation-de-paquets}{%
+\paragraph{Commutation de paquets}\label{commutation-de-paquets}}
+
+Consiste à découper un message en paquets avant de l'envoyer. On éviter
+ainsi les erreurs avec les messages longs.
+
+Problème: il faut que le récepteur final sache reconstituer le message,
+et donc il faut un protocole particulier.
+
+On va devoir avoir plusieurs champs dans chaque paquet: - un ID de
+message - un nombre pour l'ordre - un booléen pour savoir si c'est le
+dernier paquet
+
+\hypertarget{commutation-des-cellules}{%
+\paragraph{Commutation des cellules}\label{commutation-des-cellules}}
+
+Pareil que la commutation de paquets, avec une taille fixée de paquet de
+53 octets (5 d'en-tête et 48 de données).
+
+La faible taille, permet de limiter les erreurs.
+
+\hypertarget{la-normalisation}{%
+\subsubsection{La normalisation}\label{la-normalisation}}
+
+-\textgreater{} distinction norme/standard, une norme est étable par un
+organisme donc c'est officiellement le rôle alors qu'un standard est
+rédigé par une entité non reconnue -\textgreater{} rôle des organismes
+de normalisation: définir un cadre, souvent nommé modèle, et aussi
+garantir la complétude \& l'intégrité des spécifications -\textgreater{}
+organismes les plus connus: ISO, UTI (ex CCITT), IEEE
+
+\hypertarget{le-moduxe8le-osi}{%
+\paragraph{Le modèle OSI}\label{le-moduxe8le-osi}}
+
+=\textgreater{} Operated Open System
+
+Architecture en couche Double objectif: - avoir à remplacer seulement le
+ou les modules nécessaires - se procurer les modules chez différents
+fournisseurs
+
+insérer schéma en U du modèle OSI
+
+à l'envoi d'un message, on le fait passer par toutes les couches. Chaque
+couche ajoute sont en-tête (la couche laison ajoute aussi à la fin du
+message).
+
+à la réception, on fait l'inverse.
+
+On a 7 couches: - application 7 - présentation 6 - session 5 - transport
+4 - réseau 3 - liaison 2 - physique 1
+
+Les 4 premières couches sont orientées réseau (en général faites par
+l'OS), les 4 dernières sont orientées application.
+
+Attention: ce modèle est \textbf{théorique}. On peut se permettre de
+changer les choses un peu.
+
+Par exemple, les couches physique et les couches laison sont un peu
+liées (pas totalement séparées).
+
+\hypertarget{la-couche-physique}{%
+\subparagraph{La couche physique}\label{la-couche-physique}}
+
+Elle fournit les moyens mécaniques, électriques, fonctionnels et
+procédurax nécessaires à l'éactivation des connexions physiques
+destinnées à la ttransmission de bits entre deux entités de laison de
+données.
+
+=\textgreater{} On transmet du binaire.
+
+Sens de transmission
+
+-\textgreater{} mode simplex (eg: radio) -\textgreater{} mode
+semi-duplex (eg: talkie walkie) -\textgreater{} mode duplex (eg:
+websocket)
+
+Transmission parallèle
+
+Les bits d'un même caractère sont envoyés en même temps chacun sur un
+fil distinct.
+
+Pose des problèmes de synchronisation et n'est utilisé que sur des
+courtes distances (eg: bus).
+
+Transmission en séérie
+
+Les bits sont envoyés les uns derrière les autres de manière synchrone
+ou asynchrone.
+
+Synchrone -\textgreater{} l'émetteur et le récepteur se mettent d'accord
+sur une base detemps régulier. Asynchrone -\textgreater{} pas de
+négociations, chaque caractère est précédé d'un bit de start et suivi
+d'un bit de stop. de nos jours, un seul bit de suffit plus
+
+\hypertarget{duxe9bits}{%
+\subparagraph{Débits}\label{duxe9bits}}
+
+Quel que soit le monde de transmission, on peut compter le débit de la
+ligne en Bauds : le nombre de tops d'horloge en une seconde.
+
+Le nombre de bauds correspond au nombre d'émissions autorisés, donc:
+Bauds = Bits/S
+
+Si le signal prend \(2^n\) valeurs distinctes, on dit que sa valence est
+de n.

@@ -7,7 +7,6 @@ Ce repo contient mes notes de cours, TD et TP pour mon année 2020-2021 de M1 in
 ### S1 - PDFs
 
 - Algorithmique et recherche opérationnelle : [Cours](s1/algorithmique-et-recherche-operationnelle/pdfs/cours.pdf?raw=true), [TD](s1/algorithmique-et-recherche-operationnelle/pdfs/td.pdf?raw=true), [TP](s1/algorithmique-et-recherche-operationnelle/pdfs/tp.pdf?raw=true)
-- Anglais : [Cours](s1/anglais/pdfs/cours.pdf?raw=true)
 - Complexité : [Cours](s1/complexite/pdfs/cours.pdf?raw=true), [TD](s1/complexite/pdfs/td.pdf?raw=true), [TP](s1/complexite/pdfs/tp.pdf?raw=true)
 - Environnement et R&D en informatique : [Cours](s1/environnement-et-r-et-d-en-informatique/pdfs/cours.pdf?raw=true), [TD](s1/environnement-et-r-et-d-en-informatique/pdfs/td.pdf?raw=true), [TP](s1/environnement-et-r-et-d-en-informatique/pdfs/tp.pdf?raw=true)
 - Génie logiciel : [Cours](s1/genie-logiciel/pdfs/cours.pdf?raw=true), [TD](s1/genie-logiciel/pdfs/td.pdf?raw=true), [TP](s1/genie-logiciel/pdfs/tp.pdf?raw=true)
