@@ -1,0 +1,64 @@
+\section{Lundi 21 Septembre 2020}
+
+Planche de TD 2.
+
+\subsection{Exercice 1}
+
+On ajoute un bit de parité pour que le nombre de 1 soit impair. On obtient:
+
+\begin{itemize}
+\item N - 0100111\textbf{1}
+\item E - 1000101\textbf{0}
+\item T - 1010011\textbf{1}
+\end{itemize}
+
+Note : un bit de parité permet de détecter les erreurs simples, pas les erreurs doubles (ou plus).
+
+\subsection{Exercice 3}
+
+Quelques propriétés:
+\begin{itemize}
+	\item Un code de Hamming de distance $d$ peut détecter $d-1$ erreurs.
+	\item Un code de Hamming de distance $d = 2k+1$ peut détecter et corriger $k$ erreurs.
+\end{itemize}
+
+Exercice :
+
+\begin{enumerate}
+	\item La distance de hamming du code est la distance de hamming la plus petite entre deux messages quelquonques du code. On peut utiliser un tableau que l'on ne rempli qu'à moitié pour visualiser toutes les distances. \\ Dans notre cas, la distance de Hamming de ce code est donc $5$.
+	\item On peut détecter 4 erreurs, et corriger $2k+1=5 \iff k=2$ erreurs.
+	\item On peut prouver que le mot n'appartient pas au code (et donc qu'il y a une erreur) : la distance entre let mot et le premier mot du code est $3$, ce qui est inférieur à $5$. \\ Pour connaitre le mot initial, on peut calculer la distance avec tous les mots du code et sélectionner le mot qui a la distance la plus petite. Dans notre cas, c'est le mot $m3$
+\end{enumerate}
+
+\subsection{Exercice 4}
+
+CRC = Code à Redondance Cyclique. Il ne permet pas de corriger les erreurs, seulement de les détecter.
+
+On pose $deg(G(x)) = 4$ (nombre de bits) pour un exemple : $110110$.
+
+Si $deg(G(x)) = r$, alors $r$ bits de contrôle sont générés.
+
+On réécrit notre exemple sous forme polynomiale : $M(x) = x^5+x^4+x^2+x$
+
+On calcule ensuite $x^rM(x)$. $x^rM(x)=x^4(x^5+x^4+x^2+x)=x^9+x^8+x^6+x^5$.
+
+On calcule ensuite la division de $x^rM(x)$ par $G(x)$. On obtient pour $x^9+x^8+x^6+x^5 / x^4+x+1$ le reste (appelé $R(x)$) $x^2+1$ et le quotient $x^5+x^4+x+1$.
+
+$R(x)$ code sous forme d'un polynôme les bits de contrôle ajoutés à m.
+
+On peut aller écrire ce polynôme sur 4 bits : $0101$. C'est le CRC.
+
+Le message devient alors $110110\textbf{0101}$.
+
+à la réception, on aura alors reçu $E(x)=x^rM(x)+R(x)$.
+
+Pour vérifier que les données soit correctes (avec une probabilitée proche de 1), on peut alors $E(x) / G(x)$, dont le reste doit être égal à 0.
+
+\subsection{Exercice 8}
+
+\begin{enumerate}
+\item Il suffit de regarder les bits entre les fanions.
+\item A la transmission, on ajoute tout le temps un 0 après 5 1. C'est pour éviter de coder un fanion. A la réception, on doit alors enlever tous les 0 après 5 1 reçus.
+\item Regarder l'annexe derrière la feuille.
+\end{enumerate}
+

@@ -26,7 +26,7 @@ Questions :
 
 \end{enumerate}
 
-\subsubsection{Exercice 2}
+\subsection{Exercice 2}
 
 Questions :
 
@@ -46,7 +46,9 @@ maillage complet & 1 & 1 & 1 \\ \hline
 \end{tabular}
 \end{enumerate}
 
-\subsubsection{Exercice 3}
+\subsection{Exercice 3}
+
+Note : cet exercice n'a pas été corrigé en TD, ceci est juste mon brouillon.
 
 Note : chaque bit affiché en dessous de chaque chronogramme est au milieu de l'intervalle de temps prévu à sa transmission.
 
@@ -125,5 +127,46 @@ Note : chaque bit affiché en dessous de chaque chronogramme est au milieu de l'
 	\node[text width=1cm, align=center] at (8.5,-.5) {0};
 \end{tikzpicture}
 \caption{Le code RZ}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\draw[thick,black] (0,1) -- (1,1) -- (1,2) -- (2,2) -- (2,1) -- (4,1) -- (4,0) -- (5,0) -- (5,2) -- (6,2) -- (6,1) -- (7,1) -- (7,0) -- (8,0) -- (8,1) -- (9,1);
+	\node[text width=1cm, align=right] at (-.75,0) {-5V};
+	\node[text width=1cm, align=right] at (-.75,1) {+0V};
+	\node[text width=1cm, align=right] at (-.75,2) {+5V};
+	\node[text width=1cm, align=center] at (0.5,-.5) {0};
+	\node[text width=1cm, align=center] at (1.5,-.5) {1};
+	\node[text width=1cm, align=center] at (2.5,-.5) {0};
+	\node[text width=1cm, align=center] at (3.5,-.5) {0};
+	\node[text width=1cm, align=center] at (4.5,-.5) {1};
+	\node[text width=1cm, align=center] at (5.5,-.5) {1};
+	\node[text width=1cm, align=center] at (6.5,-.5) {0};
+	\node[text width=1cm, align=center] at (7.5,-.5) {1};
+	\node[text width=1cm, align=center] at (8.5,-.5) {0};
+\end{tikzpicture}
+\caption{Le code Manchester (NON FAIT)}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+	\draw[thick,black] (0,1) -- (1,1) -- (1,2) -- (2,2) -- (2,1) -- (4,1) -- (4,0) -- (5,0) -- (5,2) -- (6,2) -- (6,1) -- (7,1) -- (7,0) -- (8,0) -- (8,1) -- (9,1);
+	\node[text width=1cm, align=right] at (-.75,0) {-5V};
+	\node[text width=1cm, align=right] at (-.75,1) {+0V};
+	\node[text width=1cm, align=right] at (-.75,2) {+5V};
+	\node[text width=1cm, align=center] at (0.5,-.5) {0};
+	\node[text width=1cm, align=center] at (1.5,-.5) {1};
+	\node[text width=1cm, align=center] at (2.5,-.5) {0};
+	\node[text width=1cm, align=center] at (3.5,-.5) {0};
+	\node[text width=1cm, align=center] at (4.5,-.5) {1};
+	\node[text width=1cm, align=center] at (5.5,-.5) {1};
+	\node[text width=1cm, align=center] at (6.5,-.5) {0};
+	\node[text width=1cm, align=center] at (7.5,-.5) {1};
+	\node[text width=1cm, align=center] at (8.5,-.5) {0};
+\end{tikzpicture}
+\caption{Le code Miller (NON FAIT)}
 \end{figure}
 

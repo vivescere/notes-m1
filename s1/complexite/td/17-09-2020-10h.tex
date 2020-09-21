@@ -1,0 +1,40 @@
+\section{17 Septembre 2020}
+
+\subsection{Exercice 3}
+
+\subsubsection{Question 1}
+
+\begin{verbatim}
+def matrice_produit(a, b):
+	for i in range(1, n):
+		for j in range(1, n):
+			out[i][j] = 0 # C1
+			for k in range(1, n):
+				out[i][j] += a[i][k] + b[k][j] # C2
+	
+	return out
+			
+\end{verbatim}
+
+La taille des données d'entrée = la taille $k$ (bornée par une constante) de codage d'un entier $*n^2$, fois 2 pour car on a 2 matrices.
+
+On pose : $t=2kn^2 \iff n=\frac{t}{2k}^\frac{1}{2}$.
+
+	$temps = n^2(c_1+nc_2)=c_1n^2+c_2n^3=\frac{C_1^t}{2K}+C_2(\frac{t}{2k})^\frac{2}{3} \in \theta(t^\frac{3}{2})$
+
+\subsubsection{Question 2}
+
+Oui.
+
+\subsubsection{Question 3}
+
+\begin{verbatim}
+matrice puissance(matriceA, matriceB):
+	B=A
+	for i = 1 to P-1
+		b = produit(B, A)
+	retourner B
+\end{verbatim}
+
+Taille de l'entée : $t=kn^2+k$
+
